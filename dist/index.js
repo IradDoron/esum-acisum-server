@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const cors_1 = __importDefault(require("cors"));
+const express_1 = __importDefault(require("express"));
+const modules_1 = __importDefault(require("./data/modules"));
+const app = (0, express_1.default)();
+const POST = 3001;
+const HOST = 'localhost';
+app.use(express_1.default.json());
+app.use((0, cors_1.default)());
+app.get('/', (req, res) => {
+    res.status(200).send('Hello Wo[r]ld!');
+});
+app.get('/modules', (req, res) => {
+    res.status(200).send(modules_1.default);
+});
+app.get('/api', (req, res) => {
+    res.status(200).send('Hello World!');
+});
+app.listen(POST, HOST, () => {
+    console.log(`Server running at http://${HOST}:${POST}/`);
+});
