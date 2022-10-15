@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 
 import cors from 'cors';
 import express from 'express';
@@ -7,13 +7,11 @@ import express from 'express';
 
 import modules from '../data/modules';
 
-// import environment variables
+dotenv.config()
 
 const app = express();
 
 const PORT = process.env['PORT'] ;
-
- console.log(process.env['PORT']);
 
 app.use(express.json());      
  
