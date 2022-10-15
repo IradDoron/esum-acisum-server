@@ -16,6 +16,8 @@ type ChordilonContent = FourChordsLoopHardCoded; // edit as union when adding mo
 interface Chordilon {
 	type: 'chordilon';
 	content: ChordilonContent;
+	tonic: string;
+	scaleType: string;
 }
 
 interface ChapterElement {
@@ -26,6 +28,7 @@ interface ChapterElement {
 		| 'unorderedList'
 		| 'listItem'
 		| 'code'
+		| 'video'
 		| 'image';
 	children?: ChapterElement[];
 	content: string;
@@ -145,7 +148,7 @@ const modules: Module[] = [
 			description: 'נכיר ונתרגל את הטכניקה היסודית ביותר לליווי פסנתר',
 			title: 'ליווי שורשים ביד שמאל',
 			thumbnail: 'https://i.ibb.co/0hY4Z3s/3.jpg',
-			prerequisites: [1, 2, 3, 4, 5],
+			prerequisites: [1, 2, 3],
 			nextModules: [3],
 			goals: [
 				'להצליח ללוות אקורדים בטכניקת השורשים',
@@ -203,6 +206,13 @@ const modules: Module[] = [
 							progressions: [
 								{
 									groupTitle: 'diatonic-major',
+									collectionId: 3,
+									progressionId: 1,
+									isRootPosition: true,
+									inversionIndex: -1,
+								},
+								{
+									groupTitle: 'diatonic-major',
 									collectionId: 1,
 									progressionId: 2,
 									isRootPosition: true,
@@ -210,6 +220,12 @@ const modules: Module[] = [
 								},
 							],
 						},
+						tonic: 'C',
+						scaleType: 'major',
+					},
+					{
+						type: 'video',
+						content: 'https://www.youtube.com/embed/V7m_7MoPzfs',
 					},
 				],
 			},
