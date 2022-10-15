@@ -7,7 +7,7 @@ const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const modules_1 = __importDefault(require("../data/modules"));
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 5050;
+const PORT = process.envPORT || 5050;
 const HOST = process.env.HOST || 'localhost';
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());

@@ -9,8 +9,8 @@ import modules from '../data/modules';
 
 const app = express();
 
-const PORT = process.env.PORT || 5050;
-const HOST = process.env.HOST || 'localhost';
+const PORT = process.env['PORT'] || 5050 as any;
+const HOST = process.env['HOST'] || 'localhost';
 
 // console.log(process.env);
 
