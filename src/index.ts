@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import cors from 'cors';
 import express from 'express';
 
@@ -9,14 +11,12 @@ import modules from '../data/modules';
 
 const app = express();
 
-const PORT = process.env['PORT'] || 5050 as any;
-const HOST = process.env['HOST'] || 'localhost';
+const PORT = process.env['PORT'] ;
 
-// console.log(process.env);
-
+ console.log(process.env['PORT']);
 
 app.use(express.json());      
-
+ 
 app.use(cors());   
 
 app.use(express.static('assets'));
@@ -39,12 +39,12 @@ app.get('/modules-assets', (req, res) => {
 app.get('/api', (req, res) => {
 	res.status(200).send('Hello World!');
 });
-
+  
 app.get('/test-image', (req, res) => {
 	const testImageUrl = 'module_2/piano-fingering.png';
 	res.status(200).send(testImageUrl);
 });
 
-app.listen(PORT, HOST, () => { 
-	console.log(`Server running at http://${HOST}:${PORT}/`);
-});
+app.listen(PORT, () => { 
+	console.log(`Server running at ${PORT}/`);
+});  
