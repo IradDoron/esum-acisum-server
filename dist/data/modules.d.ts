@@ -14,6 +14,7 @@ interface Chordilon {
     content: ChordilonContent;
     tonic: string;
     scaleType: string;
+    title?: string;
 }
 interface ChapterElement {
     type: 'paragraph' | 'heading' | 'orderedList' | 'unorderedList' | 'listItem' | 'code' | 'video' | 'image';
