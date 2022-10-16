@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { sanitizedConfig } from '../config';
 
 import cors from 'cors';
 import express from 'express';
@@ -11,13 +12,14 @@ dotenv.config()
 
 const app = express();
 
-const PORT = process.env['PORT'] ;
+const PORT = sanitizedConfig.PORT;
+const HOST = sanitizedConfig.HOST;
 
 app.use(express.json());      
  
 app.use(cors());   
 
-app.use(express.static('assets'));
+app.use(express.static('assets')); 
 
 app.get('/', (req, res) => {
 	res.status(200).send('Hello World!');
@@ -44,5 +46,5 @@ app.get('/test-image', (req, res) => {
 });
 
 app.listen(PORT, () => { 
-	console.log(`Server running at ${PORT}/`);
+	console.log(`Server running on http://${HOST}:${PORT}`);
 });  

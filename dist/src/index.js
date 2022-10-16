@@ -4,12 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
+const config_1 = require("../config");
 const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const modules_1 = __importDefault(require("../data/modules"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = process.env['PORT'];
+const PORT = config_1.sanitizedConfig.PORT;
+const HOST = config_1.sanitizedConfig.HOST;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use(express_1.default.static('assets'));
@@ -33,5 +35,5 @@ app.get('/test-image', (req, res) => {
     res.status(200).send(testImageUrl);
 });
 app.listen(PORT, () => {
-    console.log(`Server running at ${PORT}/`);
+    console.log(`Server running on http://${HOST}:${PORT}`);
 });
