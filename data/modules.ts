@@ -30,9 +30,14 @@ interface ChapterElement {
 		| 'listItem'
 		| 'code'
 		| 'video'
-		| 'image';
+		| 'image'
+		| 'subTitle'
+		| 'basicQuestion'
+		| 'quiz';
+
 	children?: ChapterElement[];
-	content: string;
+	content?: string;
+	[otherProps: string]: any;
 }
 
 interface Chapter {
@@ -55,7 +60,7 @@ interface Module {
 }
 
 const modules: Module[] = [
-
+	// ליווי שורשים ביד שמאל
 	{
 		id: 2,
 		meta: {
@@ -75,6 +80,52 @@ const modules: Module[] = [
 				title: 'תיאור הטכניקה',
 				description: 'הסבר טכני על טכניקת ליווי השורשים',
 				elements: [
+					{
+						type: 'subTitle',
+						content: 'מהם שורשים?',
+					},
+					{
+						type: 'paragraph',
+						content: 'שורש זה הצליל הראשון של האקורד.',
+					},
+					{
+						type: 'paragraph',
+						content: `לדוגמה, באקורד דו מז׳ור הצליל הראשון שלו הוא דו, אז אפשר לומר שצליל השורש שלו הוא דו.`,
+					},
+					{
+						type: 'paragraph',
+						content: `השורש של סול מז׳ור הוא סול, כי זה הצליל הראשון שלו. השורש של רה מינור הוא רה, כי זה הצליל הראשון שלו וכן הלאה. `,
+					},
+					{
+						type: 'subTitle',
+						content: `איך מוצאים את השורש מהר?`,
+					},
+					{
+						type: 'paragraph',
+						content: `שמתם לב לתבנית בדוגמאות למעלה? השם של האקורדים תמיד מתחיל בצליל השורש שלהם. `,
+					},
+					{
+						type: 'paragraph',
+						content: `ככה נותנים שמות לאקורדים - מציינים את הצליל הראשון, שנקרא גם צליל השורש, ואז מתארים את שאר הצלילים עם תיאורים שונים כמו מז׳ור, מינור, מוקטן, וכל מיני מספרים כמו שבע, תשע וכו׳. `,
+					},
+					{
+						type: 'paragraph',
+						content: `מה שחשוב לנו בשלב הזה זה למצוא את השורשים של האקורדים בזריזות, ורק אותם. גם אקורדים מורכבים שאתם עוד לא מכירים אתם יכולים כבר עכשיו לדעת מה השורשים שלהם.`,
+					},
+					{
+						type: 'quiz',
+						quizSections: [
+							{
+								quizType: 'hideAnswer',
+								questions: [
+									{
+										question: `תאמרו לי מהר! מה השורש של אקורד פה מז׳ור? מה השורש של סול דיאז מוקטן? מה השורש של רה מז׳ור שבע במול תשע?`,
+										answer: `אם עניתם: פה, סול דיאז ורה אז הבנתם את העניין. בואו נמשיך.`,
+									},
+								],
+							},
+						],
+					},
 					{
 						type: 'paragraph',
 						content:
@@ -572,6 +623,7 @@ const modules: Module[] = [
 			},
 		],
 	},
+	// ילווי בלוקים ביד שמאל
 	{
 		id: 3,
 		meta: {

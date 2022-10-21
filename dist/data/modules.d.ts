@@ -17,9 +17,10 @@ interface Chordilon {
     title?: string;
 }
 interface ChapterElement {
-    type: 'paragraph' | 'heading' | 'orderedList' | 'unorderedList' | 'listItem' | 'code' | 'video' | 'image';
+    type: 'paragraph' | 'heading' | 'orderedList' | 'unorderedList' | 'listItem' | 'code' | 'video' | 'image' | 'subTitle' | 'basicQuestion' | 'quiz';
     children?: ChapterElement[];
-    content: string;
+    content?: string;
+    [otherProps: string]: any;
 }
 interface Chapter {
     title: string;
