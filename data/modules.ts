@@ -190,6 +190,82 @@ const modules: Module[] = [
 						content:
 							'אם יש אקורד ארוך שנמשך יותר מתיבה אחת, אז תנגנו את השורש שוב כל תחילת תיבה.',
 					},
+					{
+						type: 'subTitle',
+						content: 'סיכום הפרק',
+					},
+					{
+						type: 'paragraph',
+						content: 'בפרק זה למדנו:',
+					},
+					{
+						type: 'unorderedList',
+						children: [
+							{
+								type: 'listItem',
+								children: [
+									{
+										type: 'paragraph',
+										content: `שורש זה הצליל הראשון של האקורד.`,
+									},
+								],
+								content: '',
+							},
+							{
+								type: 'listItem',
+								children: [
+									{
+										type: 'paragraph',
+										content: `כל שם של אקורד מורכב ככל שיהיה, מתחיל בשם צליל השורש שלו.`,
+									},
+								],
+								content: '',
+							},
+							{
+								type: 'listItem',
+								children: [
+									{
+										type: 'paragraph',
+										content: `בטכניקת ליווי השורשים ננגן רק את השורשים של האקורדים, ונשתמש באצבע מספר 5.`,
+									},
+								],
+								content: '',
+							},
+							{
+								type: 'listItem',
+								children: [
+									{
+										type: 'paragraph',
+										content: `כל אקורד חדש ננגן פעם אחת את השורש, ואם יש אקורד ארוך ננגן את השורש שוב כל תחילת תיבה.`,
+									},
+								],
+								content: '',
+							},
+						],
+						content: '',
+					},
+					{
+						type: 'quiz',
+						quizSections: [
+							{
+								quizType: 'hideAnswer',
+								questions: [
+									{
+										question: `מהי טכניקת השורשים?`,
+										answer: `טכניקת ליווי לפסנתר שבה אנחנו ננגן את השורשים של האקורדים בלבד.`,
+									},
+									{
+										question: `מה נעשה אם אקורד אחד נמשך יותי מתיבה אחת?`,
+										answer: `ננגן את השורש שוב כל תחילת תיבה.`,
+									},
+									{
+										question: `עם איזו אצבע ננגן את השורשים של האקורדים?`,
+										answer: `עם אצבע מספר 5 ביד שמאל (עם הזרת).`,
+									},
+								],
+							},
+						],
+					},
 				],
 			},
 			// הדגמה בסיסית
